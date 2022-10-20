@@ -1,0 +1,15 @@
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# Node.js
+node_modules/
+dist/
+
+#IntelliJ IDEA
+.idea
+*.iml
