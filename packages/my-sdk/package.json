@@ -4,10 +4,14 @@
   "description": "",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
+  "typings": "types/index.d.ts",
   "scripts": {
     "build": "vite build",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "test:watch": "vitest",
+    "test": "vitest run --coverage",
+    "commit-lint": "",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
+    "release": ""
   },
   "files": [
     "dist"

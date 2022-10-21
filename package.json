@@ -6,13 +6,46 @@
   "scripts": {
     "build:sdk": "pnpm run --filter ./live-sdk build",
     "docs:build": "pnpm run --filter ./site docs:build",
-    "exm:dev": "pnpm run --filter ./example dev",
-    "test": "pnpm run --filter ./live-sdk test"
+    "example": "pnpm run --filter ./example dev",
+    "test": "pnpm run --filter ./live-sdk test",
+    "test:watch": "pnpm run --filter ./live-sdk test:watch",
+    "changelog": "pnpm run --filter ./live-sdk changelog",
+    "release": "pnpm run --filter ./live-sdk release"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --allow-empty --concurrent false",
+    "commit-msg": "pnpm exec commit-lint $1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,vue,less}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
+    "*.{vue,css,less}": "stylelint --fix"
+  },
+  "eslintConfig": {
+    "root": true,
+    "ignorePatterns": [],
+    "extends": [
+      "eslint-config"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config"
+    ],
+    "ignoreFiles": []
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "conventional-changelog": "^3.1.25",
+    "eslint": "^8.25.0",
+    "eslint-config": "workspace:^1.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.1",
+    "stylelint": "^14.14.0",
+    "stylelint-config": "workspace:^1.0.0",
     "typescript": "^4.8.4",
     "vite": "^3.1.0",
     "vite-plugin-dts": "^1.6.6"
