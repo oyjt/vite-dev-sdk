@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:sdk": "pnpm run --filter ./live-sdk build",
+    "build:sdk": "pnpm run --filter ./packages/my-sdk build",
     "docs:build": "pnpm run --filter ./site docs:build",
     "example": "pnpm run --filter ./example dev",
-    "test": "pnpm run --filter ./live-sdk test",
-    "test:watch": "pnpm run --filter ./live-sdk test:watch",
-    "changelog": "pnpm run --filter ./live-sdk changelog",
-    "release": "pnpm run --filter ./live-sdk release",
+    "test": "pnpm run --filter ./packages/my-sdk test",
+    "test:watch": "pnpm run --filter ./packages/my-sdk test:watch",
+    "changelog": "pnpm run --filter ./packages/my-sdk changelog",
+    "release": "pnpm run --filter ./packages/my-sdk release",
     "prepare": "husky install"
   },
   "simple-git-hooks": {
