@@ -10,7 +10,8 @@
     "test": "pnpm run --filter ./live-sdk test",
     "test:watch": "pnpm run --filter ./live-sdk test:watch",
     "changelog": "pnpm run --filter ./live-sdk changelog",
-    "release": "pnpm run --filter ./live-sdk release"
+    "release": "pnpm run --filter ./live-sdk release",
+    "prepare": "husky install"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged --allow-empty --concurrent false",
@@ -25,27 +26,32 @@
     "root": true,
     "ignorePatterns": [],
     "extends": [
-      "eslint-config"
+      "@my-sdk/eslint-config"
     ]
   },
   "stylelint": {
     "extends": [
-      "stylelint-config"
+      "@my-sdk/stylelint-config"
     ],
     "ignoreFiles": []
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@my-sdk/eslint-config": "workspace:^1.0.0",
+    "@my-sdk/stylelint-config": "workspace:^1.0.0",
     "conventional-changelog": "^3.1.25",
     "eslint": "^8.25.0",
-    "eslint-config": "workspace:^1.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "simple-git-hooks": "^2.8.1",
     "stylelint": "^14.14.0",
-    "stylelint-config": "workspace:^1.0.0",
     "typescript": "^4.8.4",
     "vite": "^3.1.0",
     "vite-plugin-dts": "^1.6.6"
